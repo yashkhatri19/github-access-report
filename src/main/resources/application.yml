@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: github-access-report
+
+server:
+  port: 8080
+
+github:
+  # Never hard-code the token here. Set it via the GITHUB_TOKEN environment
+  # variable (see README.md -> "Authentication").
+  token: ${GITHUB_TOKEN:}
+  api-base-url: https://api.github.com
+  page-size: 100
+  # Max number of repositories whose collaborators are fetched in parallel.
+  concurrency: 10
+
+logging:
+  level:
+    root: INFO
+    com.example.githubaccessreport: INFO
